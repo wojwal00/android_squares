@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_light"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/taskTextView"
+        android:layout_margin="20sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:text="@string/zdobadz_jak_najwiecej_punktow"
+        />
+
+    <com.company.davidgame.DrawView
+        android:id="@+id/drawing"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_below="@id/taskTextView"
+        android:background="@android:color/holo_blue_light" >
+    </com.company.davidgame.DrawView>
+
+    <TextView
+        android:id="@+id/pointsTextView"
+        android:layout_margin="30sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/drawing"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="Wynik: 0"
+        />
+
+</RelativeLayout>
