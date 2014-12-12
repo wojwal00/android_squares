@@ -16,6 +16,7 @@ public class ElemView extends View{
     private Board board;
     private List<ElemView> children;
 
+
     /**
      * Simple constructor to use when creating a view from code.
      *
