@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">DavidGame</string>
+    <string name="app_name">SquaresGame</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="zdobadz_jak_najwiecej_punktow">Zdobądź jak najwięcej punktów</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="MainActivity">MainActivity</string>
+    <string name="title_activity_square_game">SquareGameActivity</string>
 
 </resources>

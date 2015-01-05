@@ -3,19 +3,19 @@ package com.company.davidgame.utils;
 /**
  * Created by IK0214041 on 2014-12-05.
  */
-public class Board {
+public class AnimationParams {
 
-    public static float BOARD_SIZE = 1000;
+
     private int translationX;
     private int translationY;
     private double scale;
-    private int rotation;
+    private float rotation;
 
 
-    public Board() {
+    public AnimationParams() {
     }
 
-    public Board(int translationX, int translationY, double scale, int rotation) {
+    public AnimationParams(int translationX, int translationY, double scale, float rotation) {
         this.translationX = translationX;
         this.translationY = translationY;
         this.scale = scale;
@@ -47,11 +47,11 @@ public class Board {
         this.scale = scale;
     }
 
-    public int getRotation() {
+    public float getRotation() {
         return rotation;
     }
 
-    public void setRotation(int rotation) {
+    public void setRotation(float rotation) {
         this.rotation = rotation;
     }
 }

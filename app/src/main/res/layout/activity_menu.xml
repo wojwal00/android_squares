@@ -32,7 +32,7 @@
         android:onClick="startCollectPointsGame"
         />
     <Button
-
+        android:text="square"
         android:id="@+id/menuButton3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -40,5 +40,6 @@
         android:padding="20sp"
         android:textSize="20sp"
         android:layout_below="@id/menuButton2"
+        android:onClick="startSquareGame"
         />
 </RelativeLayout>

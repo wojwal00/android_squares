@@ -1,7 +1,6 @@
 package com.company.davidgame.utils;
 
 import android.graphics.Canvas;
-import android.view.View;
 
 import com.company.davidgame.ElemRect;
 
@@ -22,42 +21,42 @@ public class UtilsHelper {
         return elemRects;
     }
 
-    public static List<ElemRect> setInactiveRandomElementFromList(List<ElemRect> elemRects) {
+    public static ElemRect[] setInactiveRandomElementFromList(ElemRect[] elemRects) {
         Random random = new Random();
-        int freeElem = random.nextInt(elemRects.size()-1);
-        elemRects.get(freeElem).setVisibility(View.INVISIBLE);
+        int freeElem = random.nextInt(elemRects.length-1);
+        elemRects[freeElem].setInactiveState();
         return elemRects;
     }
 
-    public static Board initBoard() {
-        Board board = new Board();
-        board.setTranslationX(0);
-        board.setTranslationY(0);
-        board.setScale(1.0);
-        board.setRotation(0);
-        return board;
+    public static AnimationParams initAnimationParams() {
+        AnimationParams animationParams = new AnimationParams();
+        animationParams.setTranslationX(0);
+        animationParams.setTranslationY(0);
+        animationParams.setScale(1.0);
+        animationParams.setRotation(0);
+        return animationParams;
     }
 
-    public static Board copyBoard(Board board){
-        return new Board(board.getTranslationX(),board.getTranslationY(),board.getScale(),board.getRotation());
+    public static AnimationParams copyAnimationParams(AnimationParams animationParams){
+        return new AnimationParams(animationParams.getTranslationX(), animationParams.getTranslationY(), animationParams.getScale(), animationParams.getRotation());
     }
 
-    public static List<ElemRect> insertRandomPointsValues(List<ElemRect> elemRects) {
+    public static ElemRect[] insertRandomPointsValues(ElemRect[] elemRects) {
         List<Integer> points = new ArrayList<Integer>();
-        for(int i = 1; i <= elemRects.size(); i++){
+        for(int i = 1; i <= elemRects.length; i++){
             points.add(i);
         }
         Collections.shuffle(points);
-        for(int i = 0; i < elemRects.size(); i++){
-            elemRects.get(i).setPoints(points.get(i));
+        for(int i = 0; i < elemRects.length; i++){
+            elemRects[i].setPoints(points.get(i));
         }
         return elemRects;
     }
 
-    public static Canvas setBoardParametersToCanvas(Canvas canvas, Board board) {
-        canvas.scale((float)board.getScale(),(float)board.getScale());
-        canvas.translate(board.getTranslationX(), board.getTranslationY());
-        canvas.rotate(board.getRotation());
+    public static Canvas setAnimationParametersToCanvas(Canvas canvas, AnimationParams animationParams, ElemRect elemRect) {
+        canvas.scale((float) animationParams.getScale(),(float) animationParams.getScale());
+        canvas.translate(animationParams.getTranslationX(), animationParams.getTranslationY());
+        canvas.rotate(animationParams.getRotation(),elemRect.getRect().centerX(),elemRect.getRect().centerY());
         return canvas;
     }
 }
